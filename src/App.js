@@ -10,7 +10,7 @@ function App() {
           src="https://www.youtube.com/embed/ZMQX9Son3gY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
         </iframe>
         
-        <p>Stop asking where to download blck. </p>
+        <p>stop asking how/where to download blck pwweeeasee uwu owo 😭😭</p>
       </header>
     </div>
   );
