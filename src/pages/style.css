@@ -5,10 +5,10 @@
 .App-header {
   background: rgba(205,53,197);
   background-image: linear-gradient(
-        115deg,  
-        rgb(96, 28, 117) 0%, 
-        rgb(161, 82, 185) 60%, 
-        rgb(221, 144, 240) 100%
+        115deg,
+        rgb(194, 16, 150) 0%, 
+        rgb(207, 67, 160) 50%, 
+        rgb(226, 123, 186) 100%
   );
   background-position: top left;
   min-height: 100vh;
@@ -38,8 +38,28 @@
   margin: auto;
 }
 
-.link {
+.main-title {
+  position: relative;
+  transform: translateY(-100%);
+  font-size: 200%;
+}
+
+.main-link {
   color: #0500059d;
+  position: static;
+  transform: translateY(-100%);
+  font-size: 115%;
+}
+
+.back-link {
+  color: #0000009d;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+}
+
+.link {
+  color: #0000009d;
   margin-bottom: 1%;
 }
 
