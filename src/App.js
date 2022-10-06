@@ -10,6 +10,14 @@ function App() {
         </iframe>
         
         <p>stop asking how/where to download blck pwweeeasee uwu owo 😭😭</p>
+        <a
+          className="App-link"
+          href="https://discord.com/channels/791323294301290546/791324033240530955/1014544806204149840"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          you should also check this out btw
+        </a>
       </header>
     </div>
   );
