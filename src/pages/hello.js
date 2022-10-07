@@ -5,8 +5,8 @@ const App = () => {
   return (
     <div class="App">
       <header class="App-header">
-        <h1 class="text main-title">404: not found </h1>
-        <Link to="/home" class="button">home</Link>
+        <Link to="/home" class="back-button button">back</Link>
+        <p class="text">hello</p>
       </header>
     </div>
   );

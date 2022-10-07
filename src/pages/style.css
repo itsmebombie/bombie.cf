@@ -3,13 +3,16 @@
 }
 
 .App-header {
-  background: rgba(205,53,197);
+  background: rgb(27, 26, 32);
   background-image: linear-gradient(
-        115deg,
-        rgb(194, 16, 150) 0%, 
-        rgb(207, 67, 160) 50%, 
-        rgb(226, 123, 186) 100%
+        135deg,
+        rgb(0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.2) 30%, 
+        rgba(0, 0, 0, 0) 50%, 
+        rgba(0, 0, 0, 0.2) 70%, 
+        rgb(0, 0, 0) 100%
   );
+  animation: gradient 10s infinite;
   background-position: top left;
   min-height: 100vh;
   display: flex;
@@ -20,46 +23,67 @@
   color: white;
 }
 
+@keyframes gradient {
+  0% {background-color: rgb(27, 26, 32);}
+  50% {background-color: rgb(29, 27, 56);}
+  100% {background-color: rgb(27, 26, 32);}
+}
+
 .blck {
   max-width: 65%;
   max-height: calc(500px + 2vmin);
   width: auto;
   height: auto;
-  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  border-radius: 16px;
 }
 
 .youtube {
   max-width: 65%;
   max-height: 100vh;
-  margin: auto;
+  margin-top: 8px;
+  border-radius: 16px;
 }
 
 .text {
-  margin: auto;
+  -webkit-text-fill-color: #b6b6b6;
 }
 
 .main-title {
   position: relative;
   transform: translateY(-100%);
   font-size: 200%;
+
 }
 
-.main-link {
-  color: #0500059d;
-  position: static;
-  transform: translateY(-100%);
-  font-size: 115%;
+.button {
+  text-decoration-color: #00000000;
+  -webkit-text-fill-color: #b6b6b6;
+  font-size: 65%;
+  border-radius: 16px;
+  border: 2px solid #ffffff98;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #00000000;
+  margin-bottom: 15px;
+  transition: font-size 0.1s ease-in-out;
 }
 
-.back-link {
-  color: #0000009d;
+.back-button {
   position: absolute;
-  left: 0%;
-  top: 0%;
+  left: 8px;
+  top: 8px;
+}
+
+
+.button:hover {
+  font-size: 85%;
 }
 
 .link {
-  color: #0000009d;
+  color: #7e7e7ed5;
   margin-bottom: 1%;
 }
 

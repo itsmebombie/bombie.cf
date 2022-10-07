@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import Blck from "./pages/blck";
 import Home from "./pages/home";
+import Hello from "./pages/hello";
 import Err from "./pages/404";
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
         <Route path="/blck" element={<Blck />} />
+        <Route path="/hello" element={<Hello />} />
         <Route path="/*" element={<Err />} />
       </Routes>
     </BrowserRouter>
