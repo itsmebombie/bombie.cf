@@ -8,7 +8,7 @@ const App = () => {
         <h1 class="text main-title">bombie's website</h1>
         <Link to="/home" class="button">home</Link>
         <Link to="/blck" class="button">blck</Link>
-        <Link to="/hello" class="button">literally hello</Link>
+        <Link to="/ip" class="button">dont click 😳😳😳</Link>
       </header>
     </div>
   );

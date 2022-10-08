@@ -39,6 +39,15 @@
   border-radius: 16px;
 }
 
+.hover {
+  transition: border-radius 0.1s, transform 0.1s;
+}
+
+.hover:hover {
+  border-radius: 2px;
+  transform: scale(1.03, 1.03) rotate(0.01deg);
+}
+
 .youtube {
   max-width: 65%;
   max-height: 100vh;
@@ -47,7 +56,7 @@
 }
 
 .text {
-  -webkit-text-fill-color: #b6b6b6;
+  -webkit-text-fill-color: #c4c4c4c4;
 }
 
 .main-title {
@@ -59,16 +68,16 @@
 
 .button {
   text-decoration-color: #00000000;
-  -webkit-text-fill-color: #b6b6b6;
+  -webkit-text-fill-color: #b6b6b6b6;
   font-size: 65%;
   border-radius: 16px;
-  border: 2px solid #ffffff98;
+  border: 2px solid #b6b6b6b6;
   padding: 8px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #00000000;
+  background-color: #ffffff00;
   margin-bottom: 15px;
-  transition: font-size 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
 .back-button {
@@ -79,11 +88,18 @@
 
 
 .button:hover {
-  font-size: 85%;
+  transform: scale(1.15, 1.15) rotate(0.01deg);
+  background-color: #8b90dd1a;
 }
 
 .link {
-  color: #7e7e7ed5;
+  color: #b6b6b6b6;
   margin-bottom: 1%;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+}
+
+.link:hover {
+  color: #bbbbbbbb;
+  background-color: #b6b6b61b;
 }
 
