@@ -3,14 +3,20 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import './style.css';
-import sample from './assets/video.mp4';
 
 const App = () => {
   //creating IP state
   const [ip, setIP] = useState('');
   const [fsize, setFontSize] = useState('');
-  const delay = async (ms = 1000) => new Promise(resolve => setTimeout(resolve, ms))
+  const [isVisible, setIsVisible] = useState(false);
+  const delay = async (ms = 10) => new Promise(resolve => setTimeout(resolve, ms))
   var font_size = 300;
+
+  const handleClick = event => {
+    // toggle visibility
+    setIsVisible(true);
+    document.getElementById('video').play()
+  };
 
   //creating function to load ip address from the API
   const getData = async () => {
@@ -37,20 +43,23 @@ const App = () => {
   
   useEffect( () => {
     //passing getData method to the lifecycle method
-    getData()
+    if (isVisible) {
+      getData()
+    }
+  }, [isVisible])
 
-  }, [])
 
-  // FUCK YOU FUCK YOU FCUK YOU FCUK YOU FUCK YOU FUCK YOU FUCK YOU FUCK YOU FUCK OYU
-  // FINALYYYYYYYY I DID IT YAY FUCK YOU JS FUCK YOU HTML FUCK YOU REACT FUCK YOU FUCK YOU FUCK YOU FUCK YOUUUUUUUUUU 
   return (
     <div class="App">
       <header class="peashooter-header">
-        <video class='peashooter-video' autoPlay>
-          <source src={sample} type='video/mp4' />
-          <source src={sample} type='video/ogg' />
+        <h1 id="click-to-start-video" class="clickable hover" onClick={handleClick} style={{visibility: !isVisible ? "visible" : "hidden"}}>click here to start</h1>
+
+        <video id="video" style={{visibility: isVisible ? "visible" : "hidden"}} class='peashooter-video'>
+          <source src={require('./assets/video.mp4')} type='video/mp4' />
+          <source src={require('./assets/video.mp4')} type='video/ogg' />
+          Your browser does not support the video tag.
         </video>
-          <pre style={{fontSize: fsize + '%'}}>{ip}</pre>
+        <pre id="ip-info-text" style={{fontSize: fsize + '%'}}>{ip}</pre>
       </header>
     </div>
   );

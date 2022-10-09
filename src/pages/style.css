@@ -33,7 +33,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  font-size-adjust: 0.58;
 }
 
 .peashooter-video {
@@ -107,7 +106,6 @@
   top: 8px;
 }
 
-
 .button:hover {
   transform: scale(1.15, 1.15) rotate(0.01deg);
   background-color: #8b90dd1a;
@@ -129,5 +127,14 @@
 
 .clickable:active {
   transform: scale(0.95, 0.95) rotate(0.01deg);
+}
+
+#click-to-start-video {
+  -webkit-text-fill-color: black;
+  position: absolute;
+}
+
+#ip-info-text {
+  position: absolute;
 }
 
