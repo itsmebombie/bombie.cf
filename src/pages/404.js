@@ -6,7 +6,7 @@ const App = () => {
     <div class="App">
       <header class="App-header">
         <h1 class="text main-title">404: not found </h1>
-        <Link to="/home" class="button">home</Link>
+        <Link to="/home" class="button clickable">home</Link>
       </header>
     </div>
   );

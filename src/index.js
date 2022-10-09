@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import Blck from "./pages/blck";
 import Home from "./pages/home";
-import Ip from "./pages/ip";
+import Peashooter from "./pages/peashooter";
 import Err from "./pages/404";
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<Home />} />
         <Route path="/blck" element={<Blck />} />
-        <Route path="/ip" element={<Ip />} />
+        <Route path="/peashooter" element={<Peashooter />} />
         <Route path="/*" element={<Err />} />
       </Routes>
     </BrowserRouter>
