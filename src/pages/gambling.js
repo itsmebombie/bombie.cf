@@ -1,6 +1,5 @@
 // totally not inspired by specky.one/sugo 🤡
 
-import { Link } from "react-router-dom";
 import { useState } from 'react';
 import './style.css';
 
