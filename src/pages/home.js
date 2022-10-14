@@ -8,6 +8,7 @@ const App = () => {
         <h1 class="text main-title">bombie's website</h1>
         <Link to="/blck" class="button clickable">blck</Link>
         <Link to="/peashooter" class="button clickable" target="_blank" rel="noopener">funny peashooter thing 🤣</Link>
+        <Link to="/gambling" class="button clickable">gambling😍😎😋</Link>
       </header>
     </div>
   );

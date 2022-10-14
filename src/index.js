@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import Blck from "./pages/blck";
 import Home from "./pages/home";
 import Peashooter from "./pages/peashooter";
+import Gambling from "./pages/gambling";
 import Err from "./pages/404";
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/blck" element={<Blck />} />
         <Route path="/peashooter" element={<Peashooter />} />
+        <Route path="/gambling" element={<Gambling />} />
         <Route path="/*" element={<Err />} />
       </Routes>
     </BrowserRouter>

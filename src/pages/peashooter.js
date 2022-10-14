@@ -1,7 +1,7 @@
 // heavily inspired by stackoverflow 🤣 (and specky.one)
 
-import axios from 'axios'
-import { useState, useEffect } from 'react'
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import './style.css';
 
 const App = () => {
@@ -9,20 +9,20 @@ const App = () => {
   const [ip, setIP] = useState('');
   const [fsize, setFontSize] = useState('');
   const [isVisible, setIsVisible] = useState(false);
-  const delay = async (ms = 10) => new Promise(resolve => setTimeout(resolve, ms))
+  const delay = async (ms = 10) => new Promise(resolve => setTimeout(resolve, ms));
   var font_size = 300;
 
   const handleClick = event => {
     // toggle visibility
     setIsVisible(true);
-    document.getElementById('video').play()
+    document.getElementById('video').play();
   };
 
   //creating function to load ip address from the API
   const getData = async () => {
     var res = await axios.get('https://ipapi.co/json/');
     var info = "";
-    const fart = ["yes", "definetly", "most likely", "probably", "true", "1", "i think", "maybe", "idk", "always has been"]
+    const fart = ["yes", "definetly", "most likely", "probably", "true", "1", "i think", "maybe", "idk", "always has been"];
 
     res.data["hacked"] = fart[Math.floor(Math.random()*fart.length)];
     res.data["hacked by"] = "bombie.cf";
@@ -38,15 +38,15 @@ const App = () => {
       setIP(info);
       setFontSize(font_size);
       await delay(60000/66);
-    }
-  }
+    };
+  };
   
   useEffect( () => {
     //passing getData method to the lifecycle method
     if (isVisible) {
-      getData()
-    }
-  }, [isVisible])
+      getData();
+    };
+  }, [isVisible]);
 
 
   return (
