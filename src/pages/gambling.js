@@ -24,9 +24,9 @@ const App = () => {
     var text = "";
     var jackpotText = "";
 
-    if (chance < chance1) {amt=Math.abs((amt+1)*500); jackpotText = "the grand prize! you have been credited with "} else
-    if (chance < chance2) {amt=Math.abs((amt+1)*250); jackpotText = "the second prize! you have been credited with "} else
-    if (chance < chance3) {amt=Math.abs((amt+1)*100); jackpotText = "the third prize! you have been credited with "};
+    if (chance < chance1) {amt=Math.abs((amt+3)*500); jackpotText = "the grand prize! you have been credited with "} else
+    if (chance < chance2) {amt=Math.abs((amt+3)*250); jackpotText = "the second prize! you have been credited with "} else
+    if (chance < chance3) {amt=Math.abs((amt+3)*100); jackpotText = "the third prize! you have been credited with "};
 
     switch (Math.sign(amt)) {
       case 1: text = `you won ${jackpotText}$${amt}`; break;
