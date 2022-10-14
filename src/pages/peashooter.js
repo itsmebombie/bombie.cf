@@ -59,7 +59,7 @@ const App = () => {
           <source src={require('./assets/video.mp4')} type='video/ogg' />
           Your browser does not support the video tag.
         </video>
-        <pre id="ip-info-text" style={{fontSize: fsize + '%'}}>{ip}</pre>
+        <pre class="info-text" style={{fontSize: fsize + '%'}}>{ip}</pre>
       </header>
     </div>
   );

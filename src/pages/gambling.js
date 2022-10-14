@@ -1,16 +1,19 @@
 // totally not inspired by specky.one/sugo 🤡
 
+import { Link } from "react-router-dom";
 import { useState } from 'react';
 import './style.css';
 
 const App = () => {
-  const [money, setMoney] = useState(Math.floor(Math.random()*50)+50);
+  const [money, setMoney] = useState(Math.floor(Math.random()*50)+49);
   const [gambleText, setGambleText] = useState('');
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setVisiblity] = useState(true);
+  const [history, setHistory] = useState('');
+  const [historyIsVisible, setHistoryVisiblity] = useState(false);
 
   var debounce = Date.now();
 
-  const rand = async (price, prizeMulti, chance1, chance2, chance3) => {
+  const rand = async (price, prizeMulti, chance1, chance2, chance3, ticketName) => {
     if (debounce+69 > Date.now()) {return};
     debounce = Date.now();
 
@@ -34,34 +37,58 @@ const App = () => {
     const calc = money+amt-price;
     if (calc < 5) {lose()} else {setGambleText(text)};
 
+    setHistory(history+`${text} after using $${price} to buy a ${ticketName}\n`)
     setMoney(calc);
+    
+    const audio = document.getElementById('buy-sound');
+    audio.currentTime = 0;
+    audio.play();
   }
 
-  const ticket = () => rand(5, 4, 1/1250, 1/250, 1/50);
-  const goldenTicket = () => rand(25, 8, 1/625, 1/125, 1/25);
-  const platinumTicket = () => rand(100, 16, 1/250, 1/50, 1/10);
+  const ticket = () => rand(5, 4, 1/1250, 1/250, 1/50, "normal ticket");
+  const goldenTicket = () => rand(25, 8, 1/625, 1/125, 1/25, "golden ticket");
+  const platinumTicket = () => rand(100, 16, 1/250, 1/50, 1/10, "platinum ticket");
 
   const lose = () => {
-    setIsVisible(false);
-    setGambleText("bro, you lost 🤣🤣🤣");
+    setVisiblity(false);
+    setGambleText("bro, you lost 🤣");
     setMoney(-1);
-    document.getElementById('sound').play();
+    document.getElementById('lose-sound').play();
+  }
+
+  const viewHistory = () => {
+    setHistoryVisiblity(!historyIsVisible);
   }
 
   return (
     <div class="App">
       <header class="App-header">
+        <Link to="/home" class="back-button button clickable" style={{visibility: !historyIsVisible ? "visible" : "hidden"}}>back</Link>
         <h3 class="text" style={{visibility: isVisible ? "visible" : "hidden"}}>your money: ${money}</h3>
-        <h5 class="text">{gambleText}</h5>
+        <h5 class="text" style={{visibility: !historyIsVisible ? "visible" : "hidden"}}>{gambleText}</h5>
         
-        <button class="button clickable" onClick={ticket} style={{visibility: isVisible ? "visible" : "hidden"}}>buy lottery ticket (price: $5, normal rewards)</button>
+        <button class="button clickable" onClick={ticket} style={{visibility: isVisible ? "visible" : "hidden"}}>buy normal ticket (price: $5, normal rewards)</button>
         <button class="button clickable" onClick={goldenTicket} style={{visibility: isVisible ? "visible" : "hidden"}}>buy golden ticket (price: $25, better rewards)</button>
         <button class="button clickable" onClick={platinumTicket} style={{visibility: isVisible ? "visible" : "hidden"}}>buy platinum ticket (price: $100, best rewards)</button>
+
+        <button class="button clickable" onClick={()=>window.location.reload()} style={{visibility: (!historyIsVisible && !isVisible) ? "visible" : "hidden"}}>retry</button>
+        <button class="button clickable" onClick={viewHistory} style={{visibility: (!historyIsVisible && !isVisible) ? "visible" : "hidden"}}>view history</button>
         
-        <button class="button clickable" onClick={()=>window.location.reload()} style={{visibility: !isVisible ? "visible" : "hidden"}}>retry</button>
-        <audio id="sound">
+        <button class="button clickable" onClick={lose} style={{visibility: isVisible ? "visible" : "hidden"}}>lose on purpose lmao</button>
+        
+
+        <button class="back-button button clickable" onClick={viewHistory} style={{visibility: (historyIsVisible && !isVisible) ? "visible" : "hidden"}}>back</button>
+        <pre id="gambling-history" class="text info-text" style={{visibility: historyIsVisible ? "visible" : "hidden"}}>{history}</pre>
+        
+        <audio id="lose-sound">
           <source src="./assets/laugh.mp3" type="audio/ogg" />
           <source src="./assets/laugh.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+
+        <audio id="buy-sound">
+          <source src="./assets/buy.mp3" type="audio/ogg" />
+          <source src="./assets/buy.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
       </header>

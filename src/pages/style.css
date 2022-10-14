@@ -129,12 +129,17 @@
   transform: scale(0.95, 0.95) rotate(0.01deg);
 }
 
+.info-text {
+  position: absolute;
+}
+
+#gambling-history {
+  font-size: large;
+}
+
 #click-to-start-video {
   -webkit-text-fill-color: black;
   position: absolute;
 }
 
-#ip-info-text {
-  position: absolute;
-}
 
