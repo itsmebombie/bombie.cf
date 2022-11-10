@@ -10,8 +10,15 @@ const App = () => {
   const [isVisible, setVisiblity] = useState(true);
   const [history, setHistory] = useState('');
   const [historyIsVisible, setHistoryVisiblity] = useState(false);
+  const [fsize, setFontSize] = useState('');
 
+  const windowSize = getWindowSize();
   var debounce = Date.now();
+
+  function getWindowSize() {
+    const {innerWidth, innerHeight} = window;
+    return {innerWidth, innerHeight};
+  }
 
   const rand = async (price, prizeMulti, chance1, chance2, chance3, ticketName) => {
     if (debounce+69 > Date.now()) {return};
@@ -37,7 +44,10 @@ const App = () => {
     const calc = money+amt-price;
     if (calc < 5) {lose()} else {setGambleText(text)};
 
-    setHistory(history+`${text} after using $${price} to buy a ${ticketName}\n`)
+    const history_to_add = `${text} after using $${price} to buy a ${ticketName}\n`;
+    setFontSize(Math.min(windowSize.innerHeight/((history.split("\n").length-1)*1.5), windowSize.innerWidth/history_to_add.length));
+    setFontSize(Math.min(windowSize.innerHeight/((history.split("\n").length-1)*1.5), windowSize.innerWidth/history_to_add.length));
+    setHistory(history+history_to_add)
     setMoney(calc);
     
     const audio = document.getElementById('buy-sound');
@@ -78,7 +88,7 @@ const App = () => {
         
 
         <button class="back-button button clickable" onClick={viewHistory} style={{visibility: (historyIsVisible && !isVisible) ? "visible" : "hidden"}}>back</button>
-        <pre id="gambling-history" class="text info-text" style={{visibility: historyIsVisible ? "visible" : "hidden"}}>{history}</pre>
+        <pre id="gambling-history" class="text info-text" style={{visibility: historyIsVisible ? "visible" : "hidden", fontSize: fsize + 'px'}}>{history}</pre>
         
         <audio id="lose-sound">
           <source src="./assets/laugh.mp3" type="audio/ogg" />

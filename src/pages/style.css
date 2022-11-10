@@ -131,6 +131,7 @@
 
 .info-text {
   position: absolute;
+  flex: 1;
 }
 
 #gambling-history {
