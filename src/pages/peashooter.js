@@ -52,7 +52,6 @@ const App = () => {
     };
   }, [isVisible]);
 
-
   return (
     <div class="App">
       <header class="peashooter-header">

@@ -42,7 +42,7 @@
   width: 100%;
   height: 100%;
   object-fit: fill;
-  z-index: -1;
+  z-index: 1;
 }
 
 @keyframes gradient {
@@ -125,10 +125,6 @@
   border-radius: 4px;
 }
 
-.clickable:active {
-  transform: scale(0.95, 0.95) rotate(0.01deg);
-}
-
 .info-text {
   position: absolute;
   flex: 1;
@@ -143,4 +139,54 @@
   position: absolute;
 }
 
+.blck-download-button {
+  border: 4px solid #aa0000;
+  transition: border-radius 0.1s, transform 0.1s;
+  background-color: rgb(252, 65, 65);
+  border-radius: 20px;
+  width: 330px;
+  height: 70px;
+  font-size: xx-large;
+}
 
+.blck-download-beta-button {
+  border: 4px solid #70a04f;
+  transition: border-radius 0.1s, transform 0.1s;
+  background-color: rgb(93, 250, 120);
+  border-radius: 20px;
+  width: 250px;
+  height: 60px;
+  font-size: medium;
+}
+
+.comic-sans {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.blck-download-button:hover {
+  transform: scale(1.07, 1.07) rotate(0.01deg);
+  border-radius: 12px;
+}
+
+.blck-download-beta-button:hover {
+  transform: scale(1.07, 1.07) rotate(0.01deg);
+  border-radius: 12px;
+}
+
+.blck-download-header {
+  background-color: #cef8ce;
+  background-position: top left;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  font-size: larger;
+  font-size: calc(3px + 2vmin);
+}
+
+
+
+.clickable:active {
+  transform: scale(0.95, 0.95) rotate(0.01deg);
+}
