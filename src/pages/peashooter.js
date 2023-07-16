@@ -40,7 +40,7 @@ const App = () => {
       info += key + ": " + res.data[key] + '\n';
       setIP(info);
       setFontSize(Math.min(windowSize.innerHeight/((info.split("\n").length-1)*1.5), windowSize.innerWidth/res.data["ip"].length));
-      await delay(60000/66);
+      await delay(60000/132);
     };
   };
   

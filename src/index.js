@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import Blck from "./pages/blck";
+// import Blck from "./pages/blck";
 import Home from "./pages/home";
 import Peashooter from "./pages/peashooter";
 import Gambling from "./pages/gambling";
@@ -28,6 +28,7 @@ export default function App() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
+console.log(App)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
