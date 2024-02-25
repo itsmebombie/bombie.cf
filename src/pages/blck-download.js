@@ -29,7 +29,7 @@ const App = () => {
             <li>Auto rate level!</li>
             <li>BLCK Version 0.23</li>
             <li>Using RWRT (latest SPWN version)</li>
-            <li>Geometry Dash 2.2 features! (beta version only)</li>
+            <li>Geometry Dash 2.3 features! (beta version only)</li>
             <li><a href="/404">click here for free robux</a></li>
             <li>Price: $0.00</li>
             <li>Download size: 17.1 MB (beta: 23.9 MB)</li>
